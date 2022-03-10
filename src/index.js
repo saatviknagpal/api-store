@@ -231,10 +231,11 @@ app.delete("/api/delete/:id", validateToken, (req, res) => {
 const PORT = process.env.PORT || 1337;
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("frontend/build"));
+  console.log(__dirname);
+  app.use(express.static(path.join(__dirname, "./frontend/build")));
   const path = require("path");
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname + "frontend", "build", "index.html"));
+    res.sendFile(path.join(__dirname + "./frontend/build/index.html"));
   });
 }
 
