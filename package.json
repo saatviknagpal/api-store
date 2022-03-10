@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "lint": "npx eslint src/",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION =false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
@@ -34,5 +34,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
