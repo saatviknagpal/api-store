@@ -13,7 +13,7 @@ function Navbar() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/auth`, {
+      .get("/auth", {
         headers: {
           authorization: localStorage.getItem("accessToken"),
         },

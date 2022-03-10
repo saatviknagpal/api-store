@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Marketplace() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api`)
+    fetch("/api")
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
