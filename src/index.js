@@ -5,6 +5,7 @@ const User = require("./models/user.model");
 const bcrypt = require("bcryptjs");
 const fileUpload = require("express-fileupload");
 const axios = require("axios");
+const path = require("path");
 const FormData = require("form-data");
 const { createTokens, validateToken } = require("./middlewares/authenticate");
 const API = require("./models/API");
@@ -233,6 +234,9 @@ const PORT = process.env.PORT || 1337;
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
 }
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname, "frontend/build", "index.html"));
+});
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ` + PORT);
 });
