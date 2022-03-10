@@ -15,21 +15,18 @@ function Dashboard() {
   async function loginUser(event) {
     event.preventDefault();
 
-    const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/login`,
-      {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+    const response = await fetch(`/api/login`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
     const data = await response.json();
 

@@ -13,7 +13,7 @@ export default function Apis() {
       navigate("/login");
     }
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/myapi`, {
+    fetch(`/api/myapi`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },

@@ -15,7 +15,7 @@ function EditModal({ closeModal, id }) {
       navigate("/login");
     }
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/myapi/${id}`, {
+    fetch(`/api/myapi/${id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
@@ -29,7 +29,7 @@ function EditModal({ closeModal, id }) {
   function updateAPI(event) {
     event.preventDefault();
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/update/${id}`, {
+    fetch(`/api/update/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function EditModal({ closeModal, id }) {
   function deleteAPI(event) {
     event.preventDefault();
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/delete/${id}`, {
+    fetch(`/api/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

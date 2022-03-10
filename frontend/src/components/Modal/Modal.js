@@ -12,7 +12,7 @@ function Modal({ closeModal }) {
   function createAPI(event) {
     event.preventDefault();
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api`, {
+    fetch(`/api`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

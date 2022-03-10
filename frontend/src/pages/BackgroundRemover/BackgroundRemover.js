@@ -21,7 +21,7 @@ function BackgroundRemover() {
         console.log(reader.result);
         axios
           // eslint-disable-next-line no-undef
-          .post(`${process.env.REACT_APP_BACKEND_URL}/upload`, {
+          .post(`/upload`, {
             image: reader.result,
           })
           .then((res) => {
