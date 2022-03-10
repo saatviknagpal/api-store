@@ -14,6 +14,7 @@ function Register() {
 
     const response = await fetch("/api/register", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,6 +29,7 @@ function Register() {
     const data = await response.json();
 
     if (data.status === "USER REGISTERED") {
+      localStorage.setItem("accessToken", data.user);
       alert("Successfully registered");
       window.location.href = "/";
     } else {

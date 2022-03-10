@@ -42,12 +42,13 @@ app.post("/api/register", async (req, res) => {
   console.log(req.body);
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10);
-    await User.create({
+    const user = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: newPassword,
     });
-    res.json({ status: "USER REGISTERED" });
+    const accessToken = createTokens(user);
+    res.json({ status: "USER REGISTERED", user: accessToken });
   } catch (err) {
     if (err) {
       res.status(400).json({ error: err });
