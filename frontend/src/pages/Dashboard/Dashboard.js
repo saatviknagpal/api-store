@@ -15,7 +15,7 @@ function Dashboard() {
   async function loginUser(event) {
     event.preventDefault();
 
-    const response = await fetch(`/api/login`, {
+    const response = await fetch("/api/login", {
       method: "POST",
       credentials: "include",
       headers: {

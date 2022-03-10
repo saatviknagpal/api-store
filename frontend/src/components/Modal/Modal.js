@@ -12,7 +12,7 @@ function Modal({ closeModal }) {
   function createAPI(event) {
     event.preventDefault();
 
-    fetch(`/api`, {
+    fetch("/api", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

@@ -13,7 +13,7 @@ export default function Apis() {
       navigate("/login");
     }
 
-    fetch(`/api/myapi`, {
+    fetch("/api/myapi", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
