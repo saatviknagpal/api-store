@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
     "common-base64-downloader-react": "^1.0.7",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -43,8 +45,6 @@
   },
   "devDependencies": {
     "eslint": "^8.6.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
     "prettier": "^2.5.1",
     "react-error-overlay": "6.0.9"
   }
