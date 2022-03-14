@@ -33,7 +33,6 @@ function Dashboard() {
     if (data.status === "ok") {
       localStorage.setItem("accessToken", data.user);
       dispatch({ type: "USER", payload: true });
-      alert("Login successful");
       navigate("/apis");
     } else {
       alert("Invalid Credentials");

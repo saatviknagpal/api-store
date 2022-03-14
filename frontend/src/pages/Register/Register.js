@@ -30,7 +30,6 @@ function Register() {
 
     if (data.status === "USER REGISTERED") {
       localStorage.setItem("accessToken", data.user);
-      alert("Successfully registered");
       window.location.href = "/";
     } else {
       alert(data.error);
