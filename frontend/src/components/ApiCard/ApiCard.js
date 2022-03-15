@@ -11,7 +11,7 @@ function ApiCard({ name, desc, endPoint, id }) {
     <div className="apicard">
       <img src={coverPic} alt="MainPic"></img>
       <div>
-        <a href={endPoint}>
+        <a href={endPoint} rel="noopener noreferrer" target="_blank">
           <div className="MainHeading">{name}</div>
         </a>
         <div className="container">
