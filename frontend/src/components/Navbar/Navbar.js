@@ -44,9 +44,6 @@ function Navbar() {
             <Link to="/apis" className="nav-link">
               My APIs
             </Link>
-            <Link to="/apis" className="nav-link">
-              My Account
-            </Link>
             <button
               className="modal"
               onClick={() => {

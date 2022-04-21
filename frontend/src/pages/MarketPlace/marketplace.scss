@@ -1,6 +1,5 @@
+@import "../breakpoints.scss";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-
 
 .mainPage {
   width: 100%;
@@ -17,10 +16,15 @@
     border-radius: 50%;
     justify-content: space-between;
     margin-top: 9rem;
+    
     img {
+      @include media('>=phone', '<=tablet'){
+        display: none;
+      }
       object-fit: contain;
       height: 100%;
     }
+
 
     .rightPart {
       background-color: #c3e7fd;
@@ -30,8 +34,18 @@
       width: 100%;
       display: flex;
       padding: 3.125rem 6.25rem;
+      @include media('>=phone', '<=tablet'){
+        padding: 2rem;
+      }
       align-items: center;
+      @include media('>=phone', '<=tablet'){
+        display: flex;
+        flex-direction: column;
+      }
       &::after {
+        @include media('>=phone', '<=tablet'){
+          display: none;
+        }
         content: " ";
         height: 100%;
         border-radius: 50%;
@@ -49,7 +63,15 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 3.125rem;
-
+        @include media('>=phone', '<=tablet'){
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
         .title {
           color: #1e272e;
           font-family: Bebas Neue;
@@ -61,6 +83,9 @@
           font-size: xx-large;
           font-family: DM Sans;
           color: gray;
+          @include media('>=phone', '<=tablet'){
+            font-size: x-large;
+          }
         }
       }
 
@@ -75,6 +100,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        text-decoration: none;
       }
     }
   }
@@ -94,7 +120,10 @@
   margin-top: 1rem;
   gap: 1rem;
   justify-content: center;
-  .edit{
+  @include media('>=phone', '<=tablet'){
+    display: block;
+  }
+  .edit {
     display: none;
   }
 }

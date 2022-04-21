@@ -1,3 +1,5 @@
+@import "../../pages/breakpoints.scss";
+
 ::placeholder {
   color: #9eaab7;
 }
@@ -10,11 +12,18 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
+  @include media('>=phone', '<=tablet'){
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .left {
   flex: 0.5;
   background-color: #f7f8fa;
+  @include media('>=phone', '<=tablet'){
+    display: none;
+  }
 
   .leftContainer {
     padding: 5rem;
@@ -45,6 +54,9 @@
 .right {
   flex: 0.5;
   background-color: #fff;
+  @include media('>=phone', '<=tablet'){
+    flex: 0;
+  }
 
   .rightContainer {
     margin-top: 7rem;
@@ -56,6 +68,9 @@
     border: 1px solid #dfe0e0;
     box-sizing: border-box;
     border-radius: 10px;
+    @include media('>=phone', '<=tablet'){
+      margin: 0;
+    }
 
     h1 {
       font-size: 1.5rem;
